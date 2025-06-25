@@ -8,7 +8,7 @@ import { Raleway } from "next/font/google";
 
 const raleway = Raleway({
   subsets: ["latin"],
-  weight: ["400", "700"], // You can include more weights if needed
+  weight: ["400", "700"],
   display: "swap",
 });
 export const metadata = {

@@ -7,14 +7,14 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navLinks = ["Find Doctors", "Video Consult", "Medicine", "Lab Test"];
+  const navLinks = ["Find Doctors", "Video Consult", "Medicine", "Lab"];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="flex items-center justify-between px-4 sm:px-8 py-4 relative top-0">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent flex items-center justify-between px-4 py-4">
       <div className="flex items-center gap-4 sm:gap-8 px-2 my-4">
         <div className="w-40 sm:w-64">
           <Image
