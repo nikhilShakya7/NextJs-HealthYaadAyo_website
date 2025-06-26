@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className="relative min-h-screen">
       <div
         className="absolute inset-0 w-full h-full bg-no-repeat  z-0 "
-        style={{ backgroundImage: "url('/images/bg1.svg') " }}
+        style={{ backgroundImage: "url('/images/bg1.svg')" }}
       />
 
       {/* Main Content */}
@@ -342,13 +342,51 @@ export default function HomePage() {
                   of healthcare expertise. With our online consultation service,
                   you can now access top-tier medical advice.
                 </p>
+                <div className="max-w-1xl my-2">
+                  {/* Country Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 ">
+                    {[
+                      {
+                        name: "India",
+                        flag: "/images/india.svg",
+                      },
+                      {
+                        name: "Nepal",
+                        flag: "/images/india.svg",
+                      },
+                      {
+                        name: "USA",
+                        flag: "/images/india.svg",
+                      },
+                      {
+                        name: "UK",
+                        flag: "/images/india.svg",
+                      },
+                    ].map((country, index) => (
+                      <div key={index} className="flex items-start gap-4 p-1">
+                        <img
+                          src={country.flag}
+                          alt={country.name}
+                          className="w-6 h-6 object-contain"
+                        />
+                        <div>
+                          <h4 className="text-gray-800 font-['Raleway'] text-base sm:text-lg">
+                            {country.name}
+                          </h4>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
 
-                <button className="mt-6 px-6 py-3 rounded-full bg-[#7131A3] text-white font-medium text-base hover:bg-[#5a2580] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer w-full sm:w-auto">
-                  Book a demo today
-                </button>
+                  {/* Button */}
+                  <div className="mt-8  text-2xl">
+                    <button className="px-4 py-3 rounded-full bg-[#7131A3] text-white font-medium text-base hover:bg-[#5a2580] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
+                      Book a demo today
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-
             {/* Image Column */}
             <div className="w-full max-w-[550px] lg:w-[550px] lg:ml-8">
               <img
