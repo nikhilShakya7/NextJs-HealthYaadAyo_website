@@ -61,7 +61,6 @@ export default function HomePage() {
                 className="w-full h-auto"
               />
 
-              {/* Text inside the box, absolutely positioned */}
               <div className="absolute inset-0 flex flex-col items-center justify-center px-2 black">
                 <h3 className="  text-[#4C4C4C] font-['Raleway'] text-[12px]  font-extrabold  leading-[22px]  ml-6  uppercase">
                   {" "}
@@ -84,7 +83,6 @@ export default function HomePage() {
                 className="w-full h-auto"
               />
 
-              {/* Text absolutely positioned inside */}
               <div className="absolute inset-0 flex flex-col items-center justify-center px-2 black">
                 <h3 className="  text-[#4C4C4C] font-['Raleway'] text-[12px]  font-extrabold  leading-[22px]  ml-12  uppercase">
                   24 hours lab report{" "}
@@ -96,40 +94,93 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-8 mt-24 px-8 w-full">
-            {/* Image on the left - order changes on mobile */}
-            <div className="lg:order-1 order-2 w-full max-w-[500px] lg:w-[500px] lg:ml-12">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mt-24 px-4 sm:px-8 w-full">
+            {/* Overlay Image 2 */}
+            <div className="lg:order-1 order-2 w-full max-w-[500px] lg:w-[500px] lg:ml-12 lg:-mt-16">
               <img
                 src="/images/overlay2.svg"
                 alt="overlay2"
-                className="w-full h-[600px]"
+                className="w-full h-auto max-h-[800px]"
               />
             </div>
 
-            <div className="lg:order-2 order-1 text-center lg:text-left mb-16 lg:mb-80 w-full max-w-[600px]">
-              <h1 className="font-['Raleway'] font-bold text-[48px] xs:text-[52px] sm:text-[60px] md:text-[68px] lg:text-[74px] leading-[100%] capitalize text-[#8037B6]">
-                Physical
-              </h1>
-              <h2 className="font-['Raleway']  text-[36px] xs:text-[42px] sm:text-[48px] md:text-[56px] lg:text-[60px] leading-[100%] capitalize text-black mt-2">
-                Doctor Booking
-              </h2>
-              <div className="flex items-start gap-4  w-full max-w-[500px] lg:w-[500px]">
-                {/* SVG icon on the left */}
-                <img
-                  src="/images/icon1.svg"
-                  alt="Icon"
-                  className="w-12 sm:w-14 mt-12"
-                />
+            {/* Content on the right */}
+            <div className="lg:order-2 order-1 text-center lg:text-left mb-12 lg:mb-24 w-full max-w-[600px]">
+              {/* Headings*/}
+              <div className="mt-8 lg:mt-0 mb-10 lg:mb-12">
+                <h1 className="font-['Raleway'] font-bold text-[48px] xs:text-[52px] sm:text-[60px] md:text-[68px] lg:text-[74px] leading-[100%] capitalize text-[#8037B6]">
+                  Physical
+                </h1>
+                <h2 className="font-['Raleway'] text-[36px] xs:text-[42px] sm:text-[48px] md:text-[56px] lg:text-[60px] leading-[100%] capitalize text-black mt-2 lg:mt-3">
+                  Doctor Booking
+                </h2>
+              </div>
+
+              {/* Icon-text section */}
+              <div className="flex gap-5 w-full max-w-[500px] lg:w-[500px] mx-auto lg:mx-0">
+                {/* Icons column */}
+                <div className="flex flex-col items-center pt-2">
+                  <img
+                    src="/images/icon1.svg"
+                    alt="icon1"
+                    className="w-14 sm:w-16"
+                  />
+                  <img
+                    src="/images/icon2.svg"
+                    alt="icon2"
+                    className="w-14 sm:w-16 mt-6"
+                  />
+                  <img
+                    src="/images/icon3.svg"
+                    alt="icon3"
+                    className="w-14 sm:w-16 mt-6"
+                  />
+                  <img
+                    src="/images/icon4.svg"
+                    alt="icon4"
+                    className="w-14 sm:w-16 mt-6"
+                  />
+                </div>
 
                 {/* Text container */}
-                <div className="flex flex-col mt-12">
-                  <p className="text-[#4C4C4C] font-['Raleway'] text-[18px] sm:text-[20px]  leading-snug">
-                    Physical Doctor Booking
-                  </p>
-                  <p className="text-[#767676] font-['Raleway'] text-[12px] sm:text-[13px] font-normal mt-1 leading-relaxed">
-                    Easily schedule appointments with trusted healthcare
-                    professionals in just a few clicks.
-                  </p>
+                <div className="flex flex-col gap-5 flex-1">
+                  <div>
+                    <p className="text-[#4C4C4C] font-['Raleway'] text-[18px] sm:text-[20px] leading-snug">
+                      Physical Doctor Booking
+                    </p>
+                    <p className="text-[#767676] font-['Raleway'] text-[12px] sm:text-[13px] font-normal mt-1 leading-relaxed">
+                      Easily schedule appointments with trusted healthcare
+                      professionals in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-[#4C4C4C] font-['Raleway'] text-[18px] sm:text-[20px] leading-snug">
+                      International Doctor Consultation{" "}
+                    </p>
+                    <p className="text-[#767676] font-['Raleway'] text-[12px] sm:text-[13px] font-normal mt-1 leading-relaxed">
+                      Facilitating consultations with renowned international
+                      specialists to address complex healthcare needs.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[#4C4C4C] font-['Raleway'] text-[18px] sm:text-[20px] leading-snug">
+                      Tele Doctor Consultation
+                    </p>
+                    <p className="text-[#767676] font-['Raleway'] text-[12px] sm:text-[13px] font-normal mt-1 leading-relaxed">
+                      Connect with licensed doctors via audio calls, ensuring
+                      timely and expert medical advice.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[#4C4C4C] font-['Raleway'] text-[18px] sm:text-[20px] leading-snug">
+                      Virtual Doctor Consultation{" "}
+                    </p>
+                    <p className="text-[#767676] font-['Raleway'] text-[12px] sm:text-[13px] font-normal mt-1 leading-relaxed">
+                      Access specialized medical expertise from the comfort of
+                      your home, Connect with licensed doctors via video calls.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
