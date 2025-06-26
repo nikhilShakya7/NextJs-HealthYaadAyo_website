@@ -95,6 +95,45 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          <div className="flex flex-col lg:flex-row items-center gap-8 mt-24 px-8 w-full">
+            {/* Image on the left - order changes on mobile */}
+            <div className="lg:order-1 order-2 w-full max-w-[500px] lg:w-[500px] lg:ml-12">
+              <img
+                src="/images/overlay2.svg"
+                alt="overlay2"
+                className="w-full h-[600px]"
+              />
+            </div>
+
+            <div className="lg:order-2 order-1 text-center lg:text-left mb-16 lg:mb-80 w-full max-w-[600px]">
+              <h1 className="font-['Raleway'] font-bold text-[48px] xs:text-[52px] sm:text-[60px] md:text-[68px] lg:text-[74px] leading-[100%] capitalize text-[#8037B6]">
+                Physical
+              </h1>
+              <h2 className="font-['Raleway']  text-[36px] xs:text-[42px] sm:text-[48px] md:text-[56px] lg:text-[60px] leading-[100%] capitalize text-black mt-2">
+                Doctor Booking
+              </h2>
+              <div className="flex items-start gap-4  w-full max-w-[500px] lg:w-[500px]">
+                {/* SVG icon on the left */}
+                <img
+                  src="/images/icon1.svg"
+                  alt="Icon"
+                  className="w-12 sm:w-14 mt-12"
+                />
+
+                {/* Text container */}
+                <div className="flex flex-col mt-12">
+                  <p className="text-[#4C4C4C] font-['Raleway'] text-[18px] sm:text-[20px]  leading-snug">
+                    Physical Doctor Booking
+                  </p>
+                  <p className="text-[#767676] font-['Raleway'] text-[12px] sm:text-[13px] font-normal mt-1 leading-relaxed">
+                    Easily schedule appointments with trusted healthcare
+                    professionals in just a few clicks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
