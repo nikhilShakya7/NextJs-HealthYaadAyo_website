@@ -185,6 +185,46 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16 mt-8 lg:mt-12 px-4 sm:px-8 w-full">
+            {" "}
+            {/* Reduced top margin */}
+            {/* Text Column */}
+            <div className="w-full max-w-[600px] text-center lg:text-left lg:ml-12 lg:pt-2">
+              {" "}
+              {/* Reduced top padding */}
+              <div className="-mt-6 mb-0 lg:-mt-2 lg:mb-6">
+                {" "}
+                <h1 className="font-['Raleway'] font-bold text-[48px] xs:text-[52px] sm:text-[60px] md:text-[68px] lg:text-[74px] leading-[95%] tracking-tight text-[#8037B6]">
+                  Virtual
+                </h1>
+                <h2 className="font-['Raleway'] text-[36px] xs:text-[42px] sm:text-[48px] md:text-[56px] lg:text-[60px] leading-[95%] tracking-tight text-black mt-2 lg:mt-3">
+                  Doctors Booking
+                </h2>
+              </div>
+              <div className="space-y-5 text-[#4C4C4C] font-['Raleway'] text-[16px] sm:text-[18px] leading-relaxed">
+                <p>
+                  Welcome to our cutting-edge online platform designed to
+                  streamline your healthcare experience! With our user-friendly
+                  interface, booking a doctor's appointment has never been
+                  easier.
+                </p>
+                <p>
+                  Our platform features a simple and intuitive interface that
+                  caters to users of all ages and technological backgrounds.
+                  Whether you're tech-savvy or new to online booking, you'll
+                  find the process effortless.
+                </p>
+              </div>
+            </div>
+            {/* Image Column */}
+            <div className="w-full max-w-[800px] lg:w-[700px] lg:ml-8">
+              <img
+                src="/images/overlay3.svg"
+                className="w-full h-auto max-h-[1000px] object-contain lg:scale-110"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
