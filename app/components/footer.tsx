@@ -182,7 +182,7 @@ const HealthcareFooter: React.FC = () => {
     <footer className="bg-gradient-to-br from-white to-indigo-50 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Newsletter Section */}
-        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 mb-12 shadow-xl">
+        <div className="bg-purple-500 rounded- p-8 mb-12 shadow-xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">

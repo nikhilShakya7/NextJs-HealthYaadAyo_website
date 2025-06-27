@@ -59,19 +59,19 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden ">
       {/* Background */}
       <div
-        className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-center bg-cover z-0"
-        style={{ backgroundImage: "url('/images/bg.svg')" }}
+        className="absolute top-0 left-0 w-full h-full bg-no-repeat "
+        style={{ backgroundImage: "url('/images/bg1.svg')" }}
       />
 
       {/* Hero Section */}
-      <div className="relative z-20 min-h-screen overflow-hidden pt-0">
+      <div className="relative z-0 min-h-screen overflow-hidden pt-0">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-0">
           <div className="flex flex-col lg:flex-row items-start justify-between h-full">
             {/* Text content */}
-            <div className="w-full lg:w-1/2 max-w-2xl mx-auto lg:mx-0 pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 px-4 sm:px-6">
+            <div className="w-full lg:w-1/2 max-w-2xl mt-24 mx-auto lg:mx-0 pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 px-4 sm:px-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-['Raleway'] text-[#7131A3] capitalize mb-2 leading-tight">
                 Meet - Nepals
               </h1>
@@ -582,7 +582,7 @@ export default function HomePage() {
       </div>
 
       {/* Medicines Delivery Section */}
-      <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 w-full max-w-7xl mx-auto">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 w-full max-w-7xl mx-auto">
         {/* Text Column */}
         <div className="w-full lg:w-1/2 text-center lg:text-left px-4 sm:px-6">
           <div className="mb-6 lg:mb-8">
@@ -678,7 +678,7 @@ export default function HomePage() {
             <img
               src="/images/map-world.png"
               alt="World Map"
-              className="w-full h-full object-cover opacity-20"
+              className="w-full h-full object-cover opacity-50"
             />
           </div>
         </div>
@@ -709,6 +709,7 @@ export default function HomePage() {
             hover:bg-[#5a2580] transition-colors duration-300
             focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50
             active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer"
+            type="submit"
           >
             Book a demo today
           </button>
