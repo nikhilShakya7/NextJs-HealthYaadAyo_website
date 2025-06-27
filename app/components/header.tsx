@@ -35,16 +35,16 @@ const Header = () => {
           : "bg-transparent py-4"
       }`}
     >
-      <div className="flex items-center justify-between px-4 container mx-auto">
+      <div className="flex items-center justify-between px-4 mt-0 container mx-auto">
         <div className="flex items-center gap-4 sm:gap-8 px-2 my-4">
           <div className="w-40 sm:w-64">
             <Image
               src="/images/logo.png"
               alt="Yaad Aayo Logo"
-              width={288}
+              width={250}
               height={123}
               priority
-              className="w-full h-auto"
+              className="w-[244px] h-auto"
             />
           </div>
           <nav className="hidden sm:flex gap-14 lg:gap-18 mx-8">
@@ -64,7 +64,7 @@ const Header = () => {
         </div>
 
         {/* Login/Signup Button - Desktop */}
-        <div className="hidden sm:block border border-purple-500 text-purple-500 rounded-full px-4 py-2 lg:px-6 hover:bg-purple-50 transition-colors duration-200">
+        <div className="hidden sm:block  bg-white text-purple-500 rounded-full px-4 py-2 lg:px-6 hover:bg-purple-50 transition-colors duration-200">
           <button className="text-purple-700 font-bold text-sm tracking-wide">
             LOGIN / SIGN UP
           </button>
