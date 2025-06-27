@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import Header from "./components/header";
+import Footer from "./components/footer";
 <link
   href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap"
   rel="stylesheet"
@@ -36,8 +37,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={raleway.className}>
         <Header />
-
         {children}
+
+        <Footer />
       </body>
     </html>
   );
