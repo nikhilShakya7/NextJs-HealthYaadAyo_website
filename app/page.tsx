@@ -1,6 +1,46 @@
 "use client";
 
 export default function HomePage() {
+  const specialities = [
+    {
+      title: "Pulmonology",
+      icon: "/images/icons/pulmonology.svg",
+      active: false,
+    },
+    {
+      title: "Obstetrics And Gynecology",
+      icon: "/images/icons/obgyn.svg",
+      active: true,
+    },
+    {
+      title: "Endocrinology",
+      icon: "/images/icons/endo.svg",
+      active: false,
+    },
+    {
+      title: "Gastroenterology",
+      icon: "/images/icons/gastro.svg",
+      active: false,
+    },
+    {
+      title: "Psychiatry",
+      icon: "/images/icons/psychiatry.svg",
+      active: false,
+    },
+    {
+      title: "Dermatology",
+      icon: "/images/icons/darmatology.svg",
+      active: false,
+    },
+    { title: "Orthopedics", icon: "/images/icons/ortho.svg", active: false },
+    { title: "Urology", icon: "/images/icons/urology.svg", active: false },
+    {
+      title: "Stomach & Digestion",
+      icon: "/images/icons/digetion.svg",
+      active: false,
+    },
+  ];
+
   return (
     <div className="relative min-h-screen">
       <div
@@ -125,22 +165,22 @@ export default function HomePage() {
               {/* Icons column */}
               <div className="flex flex-col items-center pt-1 sm:pt-2">
                 <img
-                  src="/images/icon1.svg"
+                  src="/images/icons/icon1.svg"
                   alt="icon1"
                   className="w-12 sm:w-14 md:w-16"
                 />
                 <img
-                  src="/images/icon2.svg"
+                  src="/images/icons/icon2.svg"
                   alt="icon2"
                   className="w-12 sm:w-14 md:w-16 mt-4 sm:mt-6"
                 />
                 <img
-                  src="/images/icon3.svg"
+                  src="/images/icons/icon3.svg"
                   alt="icon3"
                   className="w-12 sm:w-14 md:w-16 mt-4 sm:mt-6"
                 />
                 <img
-                  src="/images/icon4.svg"
+                  src="/images/icons/icon4.svg"
                   alt="icon4"
                   className="w-12 sm:w-14 md:w-16 mt-4 sm:mt-6"
                 />
@@ -426,7 +466,7 @@ export default function HomePage() {
               </p>
               <div className="img">
                 <img
-                  src="/images/icons5.svg"
+                  src="/images/icons/icons5.svg"
                   className="w-full max-w-[300px] md:max-w-none mx-auto lg:mx-0"
                   alt="features"
                 />
@@ -504,6 +544,38 @@ export default function HomePage() {
               transformation with the emergence of the country's foremost health
               aggregator.
             </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-0  sm:gap-6 md:gap-8 mt-12 px-4 sm:px-6 md:px-8">
+            {specialities.map((item, index) => (
+              <div
+                key={index}
+                className={`flex flex-col items-center text-center px-2 py-0 mt-2  rounded-2xl transition-all duration-300 
+        `}
+              >
+                <div className="w-[120px] h-[120px] flex items-center justify-center mb-4">
+                  <img
+                    src={item.icon}
+                    alt={item.title}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h4 className="text-base font-semibold font-['Raleway'] mb-1">
+                  {item.title}
+                </h4>
+                <p className="text-l  font-['Raleway'] mb-1 leading-normal">
+                  Nepal's Healthcare Landscape Has Witnessed A Remarkable
+                  Transformation
+                </p>
+                <a
+                  href="#"
+                  className={`text-xs font-medium mt-1 ${
+                    item.active ? "text-white" : "text-[#7131A3]"
+                  }`}
+                >
+                  Consult Now
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </div>
