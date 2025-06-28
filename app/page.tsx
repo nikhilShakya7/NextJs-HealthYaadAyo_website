@@ -68,7 +68,8 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <div className="relative z-0 min-h-screen overflow-hidden pt-0">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-0">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1920px]">
+          {" "}
           <div className="flex flex-col lg:flex-row items-start justify-between h-full">
             {/* Text content */}
             <div className="w-full lg:w-1/2 max-w-2xl mt-24 mx-auto lg:mx-0 pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 px-4 sm:px-6">
@@ -83,14 +84,7 @@ export default function HomePage() {
                 transformation with the emergence of the country's foremost
                 Health Aggregator.
               </p>
-              <button
-                className="px-6 py-3 sm:px-8 sm:py-3 md:py-4 rounded-full bg-[#7131A3] 
-                text-white font-semibold text-base sm:text-lg
-                hover:bg-[#5a2580] transition-colors duration-300
-                focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50
-                active:bg-[#4a1d6a] shadow-md hover:shadow-lg cursor-pointer"
-                type="submit"
-              >
+              <button className="relative z-0 mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3]  text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
                 Book A Demo Today
               </button>
             </div>
@@ -238,13 +232,7 @@ export default function HomePage() {
               effortless.
             </p>
           </div>
-          <button
-            className="mt-6 sm:mt-8 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] 
-            text-white font-medium text-sm sm:text-base
-            hover:bg-[#5a2580] transition-colors duration-300
-            focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50
-            active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer"
-          >
+          <button className="relative z-0 mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3]  text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
             Book a demo today
           </button>
         </div>
@@ -323,14 +311,7 @@ export default function HomePage() {
                 ))}
               </ul>
             </div>
-            <button
-              className="mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] 
-              text-white font-medium text-sm sm:text-base
-             hover:bg-[#5a2580] transition-colors duration-300
-                focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50
-                active:bg-[#4a1d6a] shadow-md hover:shadow-lg cursor-pointer"
-              type="submit"
-            >
+            <button className="relative z-0 mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3]  text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
               Book a demo today
             </button>
           </div>
@@ -348,15 +329,6 @@ export default function HomePage() {
 
       {/* International Doctor Section */}
       <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 w-full max-w-7xl mx-auto">
-        {/* Image */}
-        <div className="w-full lg:w-1/2">
-          <img
-            src="/images/overlay5.svg"
-            alt="International Doctor"
-            className="w-full h-auto max-w-md mx-auto lg:mx-0"
-          />
-        </div>
-
         {/* Text Column */}
         <div className="w-full lg:w-1/2 text-center lg:text-left px-4 sm:px-6 lg:pl-8">
           <div className="mb-6 lg:mb-8">
@@ -399,18 +371,20 @@ export default function HomePage() {
               </div>
 
               <div className="mt-6 sm:mt-8">
-                <button
-                  className="px-6 py-3 rounded-full bg-[#7131A3] 
-                  text-white font-medium text-sm sm:text-base
-                  hover:bg-[#5a2580] transition-colors duration-300
-                  focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50
-                  active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer"
-                >
+                <button className="relative z-0 mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3]  text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
                   Book a demo today
                 </button>
               </div>
             </div>
           </div>
+        </div>
+        {/* Image */}
+        <div className="w-full lg:w-1/2">
+          <img
+            src="/images/overlay5.svg"
+            alt="International Doctor"
+            className="w-full h-auto max-w-md mx-auto lg:mx-0"
+          />
         </div>
       </div>
 
@@ -451,26 +425,18 @@ export default function HomePage() {
               />
             </div>
           </div>
-          <button
-            className="mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] 
-            text-white font-medium text-sm sm:text-base
-            hover:bg-[#5a2580] transition-colors duration-300
-            focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50
-            active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer"
-          >
+          <button className="relative z-0 mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3]  text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
             Book a demo today
           </button>
         </div>
       </div>
-
       {/* Consultation Waiting Room Section */}
       <div className="relative mt-16 sm:mt-20 md:mt-24 lg:mt-32">
         <img
           src="/images/bg-mid.svg"
           className="w-full h-full object-cover absolute inset-0 z-0"
         />
-
-        <div className="relative z-10">
+        <div className="relative z-0">
           <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 px-4 sm:px-6 w-full max-w-7xl mx-auto py-12 sm:py-16 md:py-20">
             {/* Image */}
             <div className="w-full lg:w-1/2">
@@ -513,13 +479,7 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              <button
-                className="mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] 
-                text-white font-medium text-sm sm:text-base
-                hover:bg-[#5a2580] transition-colors duration-300
-                focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50
-                active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer"
-              >
+              <button className="mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3]  text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
                 Book a demo today
               </button>
             </div>
@@ -582,7 +542,7 @@ export default function HomePage() {
       </div>
 
       {/* Medicines Delivery Section */}
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 w-full max-w-7xl mx-auto">
+      <div className="relative z-0 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 w-full max-w-7xl mx-auto">
         {/* Text Column */}
         <div className="w-full lg:w-1/2 text-center lg:text-left px-4 sm:px-6">
           <div className="mb-6 lg:mb-8">
@@ -599,18 +559,10 @@ export default function HomePage() {
               need them
             </p>
           </div>
-          <button
-            className="mt-6 sm:mt-8 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] 
-            text-white font-medium text-sm sm:text-base
-            hover:bg-[#5a2580] transition-colors duration-300
-            focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50
-            active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer"
-          >
+          <button className="mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3]  text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
             Book a demo today
           </button>
         </div>
-
-        {/* Image Column */}
         <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
           <img
             src="/images/medical-supply.png"
@@ -674,11 +626,11 @@ export default function HomePage() {
           </div>
 
           {/* Background map image */}
-          <div className="absolute inset-0 z-20">
+          <div className="absolute inset-0 z-10">
             <img
               src="/images/map-world.png"
               alt="World Map"
-              className="w-full h-full object-cover opacity-50"
+              className="w-full h-full object-cover opacity-60"
             />
           </div>
         </div>
@@ -703,14 +655,7 @@ export default function HomePage() {
               CALL US NOW ON: +977-5546140
             </h6>
           </div>
-          <button
-            className="mt-6 sm:mt-8 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] 
-            text-white font-medium text-sm sm:text-base
-            hover:bg-[#5a2580] transition-colors duration-300
-            focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50
-            active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer"
-            type="submit"
-          >
+          <button className="relative z-0 mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3]  text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
             Book a demo today
           </button>
         </div>
