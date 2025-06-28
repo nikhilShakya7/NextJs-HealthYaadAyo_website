@@ -2,6 +2,23 @@
 
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, ExternalLink, CheckCircle } from "lucide-react";
+import {
+  Twitter,
+  Linkedin,
+  Facebook,
+  Youtube,
+  Instagram,
+  Github,
+} from "lucide-react";
+
+const iconMap = {
+  twitter: <Twitter className="w-4 h-4" />,
+  linkedin: <Linkedin className="w-4 h-4" />,
+  facebook: <Facebook className="w-4 h-4" />,
+  youtube: <Youtube className="w-4 h-4" />,
+  instagram: <Instagram className="w-4 h-4" />,
+  github: <Github className="w-4 h-4" />,
+};
 
 interface City {
   name: string;
@@ -349,9 +366,10 @@ const HealthcareFooter: React.FC = () => {
               <a
                 key={index}
                 href={`#${social}`}
+                aria-label={social}
                 className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 hover:bg-purple-100 hover:text-purple-600 transition-all"
               >
-                <ExternalLink className="w-4 h-4" />
+                {iconMap[social as keyof typeof iconMap]}{" "}
               </a>
             ))}
           </div>
