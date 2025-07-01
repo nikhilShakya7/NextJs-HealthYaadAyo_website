@@ -110,7 +110,6 @@ export default function HomePage() {
 
           <div className="overflow-hidden relative px-2">
             <ul className="flex gap-3 sm:gap-4 md:gap-5 p-3 sm:p-4 animate-scroll whitespace-nowrap">
-              {/* Combined original + duplicate items */}
               {[...[1, 2, 3], ...[1, 2, 3]].map((item, index) => (
                 <li
                   key={index < 3 ? item : `copy-${item}`}
@@ -159,87 +158,91 @@ export default function HomePage() {
           animation-play-state: paused;
         }
       `}</style>
-      {/* Physical Section*/}
+      {/* Physical Section */}
       <div className="flex items-center justify-center">
         <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] mx-auto">
-          {/* Image Column*/}
-          <div className="w-full md:w-[50%] float-none md:float-left pt-[50px] md:pt-[120px] relative">
-            <img
-              src="/images/overlay2.svg"
-              className="w-full max-w-[500px] mx-auto md:max-w-none object-contain"
-              alt="Physical Doctor Booking"
-            />
-          </div>
+          <div className="flex flex-col md:flex-row gap-8 lg:gap-12 xl:gap-16">
+            {" "}
+            {/* Added responsive gap */}
+            {/* Image Column */}
+            <div className="w-full md:w-[50%] pt-[50px] md:pt-[120px] relative">
+              <img
+                src="/images/overlay2.svg"
+                className="w-full max-w-[500px] mx-auto md:max-w-none object-contain"
+                alt="Physical Doctor Booking"
+              />
+            </div>
+            {/* Text Column */}
+            <div className="w-full md:w-[50%] pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
+              <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
+                Physical
+              </h1>
+              <h2 className="font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
+                Doctor Booking
+              </h2>
 
-          {/* Text Column */}
-          <div className="w-full md:w-[50%] float-none md:float-right pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
-            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
-              Physical
-            </h1>
-            <h2 className="font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
-              Doctor Booking
-            </h2>
+              <ul className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 mt-4 sm:mt-6">
+                {[
+                  {
+                    icon: 1,
+                    title: "Physical Doctor Booking",
+                    desc: "Easily schedule appointments with trusted healthcare professionals in just a few clicks.",
+                  },
+                  {
+                    icon: 2,
+                    title: "International Doctor Consultation",
+                    desc: "Facilitating consultations with renowned international specialists to address complex healthcare needs.",
+                  },
+                  {
+                    icon: 3,
+                    title: "Tele Doctor Consultation",
+                    desc: "Connect with licensed doctors via audio calls, ensuring timely and expert medical advice.",
+                  },
+                  {
+                    icon: 4,
+                    title: "Virtual Doctor Consultation",
+                    desc: "Access specialized medical expertise from the comfort of your home, Connect with licensed doctors via video calls.",
+                  },
+                ].map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 sm:gap-4 md:gap-5 lg:gap-6 list-none"
+                  >
+                    <div className="flex-shrink-0 pt-0 sm:pt-1">
+                      <img
+                        src={`/images/icons/icon${item.icon}.svg`}
+                        alt={`icon${item.icon}`}
+                        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#4C4C4C] font-['Raleway'] text-sm xs:text-base sm:text-lg md:text-xl leading-snug">
+                        {item.title}
+                      </p>
+                      <p className="text-[#767676] font-['Raleway'] text-xs xs:text-sm sm:text-base md:text-lg font-normal mt-1 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
 
-            <ul className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 mt-4 sm:mt-6">
-              {[
-                {
-                  icon: 1,
-                  title: "Physical Doctor Booking",
-                  desc: "Easily schedule appointments with trusted healthcare professionals in just a few clicks.",
-                },
-                {
-                  icon: 2,
-                  title: "International Doctor Consultation",
-                  desc: "Facilitating consultations with renowned international specialists to address complex healthcare needs.",
-                },
-                {
-                  icon: 3,
-                  title: "Tele Doctor Consultation",
-                  desc: "Connect with licensed doctors via audio calls, ensuring timely and expert medical advice.",
-                },
-                {
-                  icon: 4,
-                  title: "Virtual Doctor Consultation",
-                  desc: "Access specialized medical expertise from the comfort of your home, Connect with licensed doctors via video calls.",
-                },
-              ].map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-3 sm:gap-4 md:gap-5 lg:gap-6 list-none"
-                >
-                  <div className="flex-shrink-0 pt-0 sm:pt-1">
-                    <img
-                      src={`/images/icons/icon${item.icon}.svg`}
-                      alt={`icon${item.icon}`}
-                      className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#4C4C4C] font-['Raleway'] text-sm xs:text-base sm:text-lg md:text-xl leading-snug">
-                      {item.title}
-                    </p>
-                    <p className="text-[#767676] font-['Raleway'] text-xs xs:text-sm sm:text-base md:text-lg font-normal mt-1 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <button className="relative z-0 mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] text-white font-medium text-xs xs:text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
-              Book A Demo Today
-            </button>
+              <button className="relative z-0 mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] text-white font-medium text-xs xs:text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
+                Book A Demo Today
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
       <div className="flex items-center justify-center h-auto">
         <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] h-auto mx-auto">
           {/* Text Content*/}
           <div className="w-full md:w-[50%] float-none md:float-left relative z-0 pt-[50px] md:pt-[120px]">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] font-bold font-['Raleway'] text-[#7131A3] capitalize -mb-4 sm:-mb-6 leading-tight">
+            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
               Virtual
             </h1>
-            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] font-normal font-['Raleway'] text-[#34134F] capitalize mb-3 sm:mb-4 md:mb-6 leading-tight">
+            <h2 className="font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
               Doctor Booking
             </h2>
             <p className="text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 sm:mb-6 md:mb-8 leading-relaxed">
@@ -272,84 +275,80 @@ export default function HomePage() {
       {/* Medicine Delivery at Home */}
       <div className="flex items-center justify-center h-auto">
         <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] mx-auto">
-          {/* Image - appears first on mobile */}
-          <div className="w-full md:w-[50%] float-none md:float-left pt-[50px] md:pt-[120px] relative">
-            <img
-              src="/images/overlay4.svg"
-              className="w-full max-w-[500px] mx-auto md:max-w-none object-contain"
-              alt="Medicine Delivery"
-            />
-          </div>
-
-          {/* Text Content */}
-          <div className="w-full md:w-[50%] float-none md:float-right pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
-            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
-              Medicine
-            </h1>
-            <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
-              Delivery At Home
-            </h2>
-
-            <p className="pt-4 sm:pt-6 md:pt-8 text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 sm:mb-6 md:mb-8 leading-relaxed">
-              Introducing our revolutionary online platform designed to simplify
-              the process of ordering and receiving your medications. With just
-              a few clicks, you can now have your prescriptions delivered
-              straight to your doorstep.
-            </p>
-
-            <p className="text-[#4C4C4C] font-['Raleway'] font-bold text-xs xs:text-sm sm:text-base tracking-wider uppercase">
-              Know Your Right Medicines
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-3 sm:gap-y-4 pt-2 sm:pt-3">
-              <ul className="space-y-2 sm:space-y-3 md:space-y-4">
-                {[
-                  "Seamless Ordering Process",
-                  "Fast And Reliable Delivery",
-                  "Convenient Delivery Options",
-                ].map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-2 sm:gap-3 md:gap-4"
-                  >
-                    <img
-                      src="/images/check.svg"
-                      alt="check"
-                      className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0"
-                    />
-                    <span className="text-gray-700 font-['Raleway'] text-xs xs:text-sm sm:text-base md:text-lg leading-snug">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <ul className="space-y-2 sm:space-y-3 md:space-y-4">
-                {[
-                  "Automatic Refill Reminders",
-                  "24/7 Customer Support",
-                  "Secure Payment Options",
-                ].map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-2 sm:gap-3 md:gap-4"
-                  >
-                    <img
-                      src="/images/check.svg"
-                      alt="check"
-                      className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0"
-                    />
-                    <span className="text-gray-700 font-['Raleway'] text-xs xs:text-sm sm:text-base md:text-lg leading-snug">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16">
+            {" "}
+            {/* Added gap utilities here */}
+            {/* Image - appears first on mobile */}
+            <div className="w-full md:w-[50%] pt-[50px] md:pt-[120px] relative">
+              {" "}
+              {/* Removed float classes */}
+              <img
+                src="/images/overlay4.svg"
+                className="w-full max-w-[500px] mx-auto md:max-w-none object-contain"
+                alt="Medicine Delivery"
+              />
             </div>
-
-            <button className="relative z-0 mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] text-white font-medium text-xs xs:text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
-              Book A Demo Today
-            </button>
+            {/* Text Content */}
+            <div className="w-full md:w-[50%] pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
+              {" "}
+              {/* Removed float classes */}
+              <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
+                Medicine
+              </h1>
+              <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
+                Delivery At Home
+              </h2>
+              <p className="pt-4 sm:pt-6 md:pt-8 text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 sm:mb-6 md:mb-8 leading-relaxed">
+                Introducing our revolutionary online platform designed to
+                simplify the process of ordering and receiving your medications.
+                With just a few clicks, you can now have your prescriptions
+                delivered straight to your doorstep.
+              </p>
+              <p className="text-[#4C4C4C] font-['Raleway'] font-bold text-xs xs:text-sm sm:text-base tracking-wider uppercase">
+                Know Your Right Medicines
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-3 sm:gap-y-4 pt-2 sm:pt-3">
+                <ul className="space-y-3 sm:space-y-4">
+                  {[
+                    "Seamless Ordering",
+                    "Fast And Reliable Delivery",
+                    "Convenient Delivery Options",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 sm:gap-4">
+                      <img
+                        src="/images/check.svg"
+                        alt="check"
+                        className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
+                      />
+                      <span className="text-gray-700 font-['Raleway'] text-sm sm:text-base md:text-lg leading-snug">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <ul className="space-y-4 sm:space-y-4">
+                  {[
+                    "Refill Reminders",
+                    "24/7 Customer Support",
+                    "Secure Payment Options",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 sm:gap-4">
+                      <img
+                        src="/images/check.svg"
+                        alt="check"
+                        className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
+                      />
+                      <span className="text-gray-700 font-['Raleway'] text-sm sm:text-base md:text-lg leading-snug">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>{" "}
+              </div>
+              <button className="relative z-0 mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] text-white font-medium text-xs xs:text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
+                Book A Demo Today
+              </button>
+            </div>
           </div>
         </div>
       </div>

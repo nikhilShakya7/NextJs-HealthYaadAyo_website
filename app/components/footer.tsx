@@ -196,7 +196,7 @@ const HealthcareFooter: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-white to-indigo-50 pt-16 pb-8">
+    <footer className="bg-gradient-to-br from-white to-indigo-50 pt-16 pb-8 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Newsletter Section */}
         <div className="bg-purple-500 rounded- p-8 mb-12 shadow-xl">
