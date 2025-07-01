@@ -63,14 +63,14 @@ export default function HomePage() {
         className="flex items-center justify-center overflow-auto bg-no-repeat bg-right z-0"
         style={{
           backgroundImage:
-            "url('/images/bg1.svg'),url('/images/BG-CIRCLE.png')",
-          backgroundPosition: "left top, right bottom",
+            "url('/images/BG-CIRCLE.png'), url('/images/bg1.svg')",
+          backgroundPosition: "right bottom, left top",
           backgroundRepeat: "no-repeat, no-repeat",
         }}
       >
         <div className="w-[1200px]">
           <div className="absolute z-0 w-[620px] h-[900px] float-left pt-[150px]">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[84px] font-bold font-['Raleway'] text-[#7131A3] capitalize mb-2 leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[84px] font-bold font-['Raleway'] text-[#7131A3] capitalize -mb-4 mt-6 leading-tight ">
               Meet - Nepals
             </h1>
             <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] font-normal font-['Raleway'] text-[#34134F] capitalize mb-4 md:mb-6 leading-tight">
@@ -86,10 +86,10 @@ export default function HomePage() {
             </button>
           </div>
 
-          <div className="float-right pt-[120px] relative">
+          <div className="float-right pt-[120px] relative z-0">
             <img
               src="/images/HERO-GIRL.png"
-              className="object-contain"
+              className="object-contain z-10"
               alt="Hero Girl"
             />
           </div>
@@ -193,11 +193,7 @@ export default function HomePage() {
                     title: "International Doctor Consultation",
                     desc: "Facilitating consultations with renowned international specialists to address complex healthcare needs.",
                   },
-                  {
-                    icon: 3,
-                    title: "Tele Doctor Consultation",
-                    desc: "Connect with licensed doctors via audio calls, ensuring timely and expert medical advice.",
-                  },
+
                   {
                     icon: 4,
                     title: "Virtual Doctor Consultation",
@@ -449,89 +445,145 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="flex items-center  justify-center overflow-auto bg-no-repeat bg-right">
-        <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] relative">
-          <h2 className="-mb-4 sm:-mb-6 text-center text-xl xs:text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem] mt-8 sm:mt-10 md:mt-12 font-normal font-['Raleway'] text-[#34134F] capitalize md:mb-6 leading-tight">
-            Consult with top doctors across specialities
-          </h2>
-          <p className="mx-auto text-sm xs:text-base sm:text-lg md:text-xl text-center font-normal font-['Raleway'] text-black mb-4 sm:mb-6 md:mb-8 leading-relaxed w-full md:w-[600px]">
-            Nepal's healthcare landscape has witnessed a remarkable
-            transformation with the emergence of
-          </p>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-5 mt-4 sm:mt-6 md:mt-8 lg:mt-10 px-2 sm:px-4 md:px-6 w-full max-w-6xl mx-auto">
-            {specialities.map((item, index) => (
-              <li
-                key={index}
-                className={`flex flex-col items-center text-center p-2 sm:p-3 md:p-4 rounded-xl transition-all duration-300 
-            ${item.active ? "bg-[#7131A3]" : "bg-white"}`}
-              >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center mb-1 sm:mb-2 md:mb-3">
-                  <img
-                    src={item.icon}
-                    alt={item.title}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h4
-                  className={`text-xs sm:text-sm md:text-base font-semibold font-['Raleway'] mb-1 ${
-                    item.active ? "text-white" : "text-black"
-                  }`}
-                >
-                  {item.title}
-                </h4>
-                <p
-                  className={`text-[10px] xs:text-xs sm:text-sm md:text-base font-['Raleway'] mb-1 leading-normal ${
-                    item.active ? "text-white" : "text-gray-600"
-                  }`}
-                >
-                  Nepal's Healthcare Landscape Has Witnessed A Remarkable
-                  Transformation
-                </p>
-                <a
-                  href="#"
-                  className={`text-[10px] xs:text-xs sm:text-sm md:text-base font-medium mt-1 ${
-                    item.active ? "text-white" : "text-[#7131A3]"
-                  }`}
-                >
-                  Consult Now
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Medicine Section */}
-      <div className="flex items-center justify-center">
-        <div className="w-[1200px] flex flex-col md:block">
+      <div className="relative">
+        {/* Lab Report Section */}
+        <div className="flex items-center justify-center h-auto relative z-10">
           {/* Image */}
-          <div className="w-full md:float-right md:w-[430px] pt-[60px] md:pt-[120px] relative order-1 md:order-none">
-            <img
-              src="/images/medical-supply.png"
-              className="w-full h-auto"
-              alt="Hero Girl"
-            />
-          </div>
-
-          {/* Text */}
-          <div className="w-full md:float-left md:w-[760px] pt-[60px] md:pt-[120px] relative order-2 md:order-none">
-            <h1 className="-mb-4 font-['Raleway'] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
-              Medicine
-            </h1>
-            <h2 className="-mb-4 font-['Raleway'] text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black sm:mt-3">
-              Reliable On Home Delivery
-            </h2>
-
-            <p className="pt-6 text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-6 md:mb-8 leading-relaxed">
-              Our yaad aayo pharmacists ensure your medicines reach you when you
-              need them
-            </p>
-
-            <button className="relative z-0 mt-4 sm:mt-6 px-6 py-3 rounded-full bg-[#7131A3] text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
-              Book A Demo Today
-            </button>
+          <div className="w-[1200px]">
+            <div className="[w-595px] float-left pt-[120px] relative">
+              <img
+                src="/images/consult.png"
+                className="w-[600px]"
+                alt="Consultation"
+              />
+            </div>
+            {/* Text */}
+            <div className="float-right pt-[120px] relative w-[600px]">
+              <h1 className="-ml-42 font-['Raleway'] font-bold sm:text-4xl md:text-5xl lg:text-[2rem] xl:text-[68px] leading-tight text-[#067EF8] -mb-6">
+                Consultation
+              </h1>
+              <h2 className="font-['Raleway'] text-2xl sm:text-3xl md:text-4xl lg:text-[3rem] xl:text-[48px] leading-tight text-black mb-6 sm:mt-3">
+                Waiting Room
+              </h2>
+              <ul className="space-y-2 sm:space-y-3">
+                {[
+                  "100 % private and confidential",
+                  "Our fee starting at Rs 500-800",
+                  "Verified doctors",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-2 sm:gap-3">
+                    <img
+                      src="/images/check.svg"
+                      alt="check"
+                      className="w-3 h-3 sm:w-4 sm:h-4 mt-1 flex-shrink-0"
+                    />
+                    <span className="text-gray-700 font-['Raleway'] text-xs sm:text-sm md:text-base leading-snug">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <button className="relative z-0 mt-4 sm:mt-6 px-6 py-3 rounded-full bg-[#7131A3] text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
+                Book A Demo Today
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Doctors Specialities Section */}
+        <div className="flex items-center justify-center overflow-auto bg-no-repeat bg-right relative z-10">
+          <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px]">
+            <div className="px-4 sm:px-6">
+              {" "}
+              {/* Added container padding */}
+              <h2 className="text-center text-xl xs:text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem] font-normal font-['Raleway'] text-[#34134F] capitalize mb-3 xs:mb-4 sm:mb-5 md:mb-6 leading-tight mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+                Consult with top doctors across specialities
+              </h2>
+              <p className="mx-auto text-center font-['Raleway'] text-black font-normal leading-relaxed px-2 sm:px-0 text-xs xs:text-sm sm:text-base md:text-lg w-full xs:w-[90%] sm:w-[80%] md:w-[600px] mb-3 xs:mb-4 sm:mb-5 md:mb-6">
+                Nepal's healthcare landscape has witnessed a remarkable
+                transformation with the emergence of
+              </p>
+            </div>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-5 mt-4 sm:mt-6 md:mt-8 lg:mt-10 px-2 sm:px-4 md:px-6 w-full max-w-6xl mx-auto">
+              {specialities.map((item, index) => (
+                <li
+                  key={index}
+                  className={`flex flex-col items-center text-center p-2 sm:p-3 md:p-4 rounded-xl transition-all duration-300 
+              ${item.active ? "bg-[#7131A3]" : "bg-white"}`}
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center mb-1 sm:mb-2 md:mb-3">
+                    <img
+                      src={item.icon}
+                      alt={item.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h4
+                    className={`text-xs sm:text-sm md:text-base font-semibold font-['Raleway'] mb-1 ${
+                      item.active ? "text-white" : "text-black"
+                    }`}
+                  >
+                    {item.title}
+                  </h4>
+                  <p
+                    className={`text-[10px] xs:text-xs sm:text-sm md:text-base font-['Raleway'] mb-1 leading-normal ${
+                      item.active ? "text-white" : "text-gray-600"
+                    }`}
+                  >
+                    Nepal's Healthcare Landscape Has Witnessed A Remarkable
+                    Transformation
+                  </p>
+                  <a
+                    href="#"
+                    className={`text-[10px] xs:text-xs sm:text-sm md:text-base font-medium mt-1 ${
+                      item.active ? "text-white" : "text-[#7131A3]"
+                    }`}
+                  >
+                    Consult Now
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Medicine Section */}
+        <div className="flex items-center justify-center relative z-10">
+          <div className="w-[1200px] flex flex-col md:block">
+            {/* Image */}
+            <div className="w-full md:float-right md:w-[430px] pt-[60px] md:pt-[120px] relative order-1 md:order-none">
+              <img
+                src="/images/medical-supply.png"
+                className="w-full h-auto"
+                alt="Medicine Delivery"
+              />
+            </div>
+            {/* Text */}
+            <div className="w-full md:float-left md:w-[760px] pt-[60px] md:pt-[120px] relative order-2 md:order-none">
+              <h1 className="-mb-4 font-['Raleway'] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
+                Medicine
+              </h1>
+              <h2 className="-mb-4 font-['Raleway'] text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black sm:mt-3">
+                Reliable On Home Delivery
+              </h2>
+              <p className="pt-6 text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-6 md:mb-8 leading-relaxed">
+                Our yaad aayo pharmacists ensure your medicines reach you when
+                you need them
+              </p>
+              <button className="relative z-0 mt-4 sm:mt-6 px-6 py-3 rounded-full bg-[#7131A3] text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
+                Book A Demo Today
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Background Image - Placed at bottom */}
+        <div
+          className="w-full h-full absolute bottom-0 bg-no-repeat z-0 bg-cover"
+          style={{
+            backgroundImage: "url('/images/mid.svg')",
+          }}
+        ></div>
       </div>
 
       {/* Global Doctor Consult Section - Responsive */}
