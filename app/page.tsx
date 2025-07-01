@@ -239,10 +239,10 @@ export default function HomePage() {
         <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] h-auto mx-auto">
           {/* Text Content*/}
           <div className="w-full md:w-[50%] float-none md:float-left relative z-0 pt-[50px] md:pt-[120px]">
-            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
+            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.25rem] lg:text-[2.75rem] xl:text-[74px] leading-tight text-[#8037B6]">
               Virtual
             </h1>
-            <h2 className="font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
+            <h2 className="font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[2.5rem] xl:text-[61px] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
               Doctor Booking
             </h2>
             <p className="text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 sm:mb-6 md:mb-8 leading-relaxed">
@@ -264,8 +264,8 @@ export default function HomePage() {
           {/* Image */}
           <div className="w-full md:w-[50%] float-none md:float-right pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
             <img
-              src="/images/overlay4.svg"
-              className="w-full max-w-[500px] mx-auto md:max-w-none h-auto object-contain"
+              src="/images/overlay3.svg"
+              className="w-full max-w-[500px] mx-auto md:max-w-none object-contain max-h-[500px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[550px]"
               alt="Virtual Doctor Booking"
             />
           </div>
@@ -278,7 +278,6 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16">
             {" "}
             {/* Added gap utilities here */}
-            {/* Image - appears first on mobile */}
             <div className="w-full md:w-[50%] pt-[50px] md:pt-[120px] relative">
               {" "}
               {/* Removed float classes */}
@@ -292,10 +291,10 @@ export default function HomePage() {
             <div className="w-full md:w-[50%] pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
               {" "}
               {/* Removed float classes */}
-              <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
+              <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[74px] leading-tight text-[#8037B6]">
                 Medicine
               </h1>
-              <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
+              <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[61px] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
                 Delivery At Home
               </h2>
               <p className="pt-4 sm:pt-6 md:pt-8 text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 sm:mb-6 md:mb-8 leading-relaxed">
@@ -360,17 +359,17 @@ export default function HomePage() {
           <div className="w-full md:w-[50%] float-none md:float-right pt-[50px] md:pt-[120px] relative">
             <img
               src="/images/overlay5.svg"
-              className="w-full max-w-[500px] mx-auto md:max-w-none object-contain"
-              alt="International Doctor Consultation"
+              className="w-full max-w-[500px] mx-auto md:max-w-none object-contain max-h-[500px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[600px]"
+              alt="Medicine Delivery"
             />
           </div>
 
           {/* Text Content */}
           <div className="w-full md:w-[50%] float-none md:float-left pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
-            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
+            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[74px] leading-tight text-[#8037B6]">
               Consultation
             </h1>
-            <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
+            <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[61px] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
               International Doctor
             </h2>
 
@@ -424,10 +423,10 @@ export default function HomePage() {
 
           {/* Text Column */}
           <div className="w-full md:w-[50%] float-none md:float-right pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
-            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
+            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[74px] leading-tight text-[#8037B6]">
               Lab Report
             </h1>
-            <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
+            <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[61px] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
               24 hours with
             </h2>
 
