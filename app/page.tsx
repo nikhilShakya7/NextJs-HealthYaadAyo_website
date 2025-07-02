@@ -579,7 +579,7 @@ export default function HomePage() {
 
         {/* Background Image - Placed at bottom */}
         <div
-          className="w-full h-full absolute bottom-0 bg-no-repeat z-0 bg-cover"
+          className="w-full h-full absolute bottom-0 bg-no-repeat z-0 bg-cover "
           style={{
             backgroundImage: "url('/images/mid.svg')",
           }}
@@ -656,17 +656,6 @@ export default function HomePage() {
                       Nepal's Healthcare Landscape Has Witnessed A Remarkable
                       Transformation
                     </p>
-
-                    <a
-                      href="#"
-                      className={`text-lg sm:text-xl font-medium px-8 py-3 rounded-full ${
-                        item.active
-                          ? "text-white bg-purple-800 hover:bg-purple-700"
-                          : "text-[#7131A3] bg-purple-50 hover:bg-purple-100"
-                      } transition-colors duration-300`}
-                    >
-                      Consult Now
-                    </a>
                   </li>
                 ))}
               </ul>
