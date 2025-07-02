@@ -1,4 +1,7 @@
 "use client";
+
+import { useRef } from "react";
+
 const specialities = [
   {
     title: "Pulmonology",
@@ -375,28 +378,25 @@ export default function HomePage() {
               can now access top-tier medical advice.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-1 lg:gap-2">
+            <ul className="grid grid-cols-0 sm:grid-cols-2 gap-x-0 gap-y-2">
               {[
                 { name: "India", flag: "/images/india.svg" },
                 { name: "Nepal", flag: "/images/india.svg" },
                 { name: "USA", flag: "/images/india.svg" },
                 { name: "UK", flag: "/images/india.svg" },
               ].map((country, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4"
-                >
+                <li key={index} className="flex items-center gap-0 p-1">
                   <img
                     src={country.flag}
                     alt={country.name}
-                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 object-contain"
+                    className="w-5 h-5 object-contain"
                   />
-                  <h4 className="text-gray-800 font-['Raleway'] text-sm sm:text-base md:text-lg">
+                  <h4 className="text-gray-800 font-['Raleway'] text-sm">
                     {country.name}
                   </h4>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
 
             <button className="relative z-0 mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] text-white font-medium text-xs xs:text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
               Book A Demo Today
@@ -623,55 +623,54 @@ export default function HomePage() {
         </div>
 
         {/* Map Background Section */}
-        <div className="relative w-full">
+        <div className="relative min-h-screen w-full overflow-hidden">
+          {/* World Map Background - Full screen */}
           <div
             className="absolute inset-0 bg-no-repeat bg-cover bg-center z-0"
             style={{ backgroundImage: "url('/images/map-world.png')" }}
           ></div>
 
-          <div className="relative z-10 w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] mx-auto py-8 sm:py-12">
-            <ul className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-              {countries.map((item, index) => (
-                <li
-                  key={index}
-                  className={`flex flex-col items-center text-center p-4 sm:p-6 rounded-lg" 
-                   
-                   `}
-                >
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center mb-3 sm:mb-4">
-                    <img
-                      src={item.icon}
-                      alt={item.title}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-
-                  <h4
-                    className={`text-base sm:text-lg md:text-xl font-semibold font-['Raleway'] mb-2 sm:mb-3`}
+          {/* Centered Content Container */}
+          <div className="relative z-10 w-full min-h-screen flex items-center justify-center p-4 sm:p-6">
+            <div className="w-full max-w-[1200px] mx-auto">
+              <ul className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+                {countries.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex flex-col items-center text-center p-6 sm:p-8 "
                   >
-                    {item.title}
-                  </h4>
+                    {/* Icon Container - Larger */}
+                    <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 flex items-center justify-center mb-5">
+                      <img
+                        src={item.icon}
+                        alt={item.title}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
 
-                  <p
-                    className={`text-xs sm:text-sm md:text-base font-['Raleway'] mb-3 sm:mb-4 leading-normal`}
-                  >
-                    Nepal's Healthcare Landscape Has Witnessed A Remarkable
-                    Transformation
-                  </p>
+                    <h4 className="text-xl sm:text-2xl md:text-3xl font-semibold font-['Raleway'] mb-4">
+                      {item.title}
+                    </h4>
 
-                  <a
-                    href="#"
-                    className={`text-sm sm:text-base font-medium px-4 py-2 rounded-full ${
-                      item.active
-                        ? "text-white bg-purple-800 hover:bg-purple-700"
-                        : "text-[#7131A3] bg-purple-50 hover:bg-purple-100"
-                    } transition-colors duration-300`}
-                  >
-                    Consult Now
-                  </a>
-                </li>
-              ))}
-            </ul>
+                    <p className="text-base sm:text-lg md:text-xl font-['Raleway'] mb-5 leading-relaxed">
+                      Nepal's Healthcare Landscape Has Witnessed A Remarkable
+                      Transformation
+                    </p>
+
+                    <a
+                      href="#"
+                      className={`text-lg sm:text-xl font-medium px-8 py-3 rounded-full ${
+                        item.active
+                          ? "text-white bg-purple-800 hover:bg-purple-700"
+                          : "text-[#7131A3] bg-purple-50 hover:bg-purple-100"
+                      } transition-colors duration-300`}
+                    >
+                      Consult Now
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
