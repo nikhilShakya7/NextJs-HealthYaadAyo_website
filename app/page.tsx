@@ -123,13 +123,13 @@ export default function HomePage() {
           <div className="overflow-hidden relative px-2">
             <button
               onClick={() => scroll("left")}
-              className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2"
+              className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2 -ml-1"
             >
               <ArrowLeft />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2"
+              className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2 -mr-1"
             >
               <ArrowRight />
             </button>
@@ -138,9 +138,9 @@ export default function HomePage() {
               ref={scrollRef}
               className="flex gap-3 p-4 overflow-x-auto scroll-smooth whitespace-nowrap scrollbar-hidden"
             >
-              {[...[1, 2, 3], ...[1, 2, 3]].map((item, index) => (
+              {[...[1, 2, 3, 4], ...[1, 2, 3, 4]].map((item, index) => (
                 <li
-                  key={index < 3 ? item : `copy-${item}`}
+                  key={index < 4 ? item : `copy-${item}`}
                   className="relative flex-shrink-0 w-[120px] xs:w-[140px] sm:w-[160px] md:w-[200px] lg:w-[240px] xl:w-[280px]"
                 >
                   <img
@@ -150,17 +150,11 @@ export default function HomePage() {
                   />
                   <div
                     className={`absolute inset-0 flex items-center justify-center p-2 text-center font-bold ${
-                      index >= 3 ? "text-white" : "text-black"
+                      index >= 3 ? "text-black" : "text-black"
                     }`}
                   >
-                    <span
-                      className={
-                        index >= 3
-                          ? "drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-                          : ""
-                      }
-                    >
-                      {item}
+                    <span>
+                      <h1 className="text-sm font-">Nepals Healthcare</h1>
                     </span>
                   </div>
                 </li>
