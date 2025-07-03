@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
 const specialities = [
@@ -60,6 +61,14 @@ const countries = [
 ];
 
 export default function HomePage() {
+  const scrollRef = useRef<HTMLUListElement>(null);
+  const scroll = (direction: string) => {
+    if (!scrollRef.current) return;
+    const scrollAmount = 300;
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+    });
+  };
   return (
     <>
       <div
@@ -73,13 +82,13 @@ export default function HomePage() {
       >
         <div className="w-[1200px]">
           <div className="absolute z-0 w-[620px] h-[900px] float-left pt-[150px]">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[84px] font-bold font-['Raleway'] text-[#7131A3] capitalize -mb-4 mt-6 leading-tight ">
+            <h1 className=" text-2xl xs:text-3xl md:text-5xl lg:text-[3.5rem] xl:text-[84px] font-bold font-['Raleway'] text-[#7131A3] capitalize -mb-4 mt-6 leading-tight ">
               Meet - Nepals
             </h1>
             <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] font-normal font-['Raleway'] text-[#34134F] capitalize mb-4 md:mb-6 leading-tight">
               Health Aggragtor
             </h2>
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-6 md:mb-8 leading-relaxed">
+            <p className=" hidden md:block  text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 md:mb-8 leading-relaxed">
               Nepal's healthcare landscape has witnessed a remarkable
               transformation with the emergence of the country's foremost Health
               Aggregator.
@@ -112,7 +121,23 @@ export default function HomePage() {
           </p>
 
           <div className="overflow-hidden relative px-2">
-            <ul className="flex gap-3 sm:gap-4 md:gap-5 p-3 sm:p-4 animate-scroll whitespace-nowrap">
+            <button
+              onClick={() => scroll("left")}
+              className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2"
+            >
+              <ArrowLeft />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2"
+            >
+              <ArrowRight />
+            </button>
+
+            <ul
+              ref={scrollRef}
+              className="flex gap-3 p-4 overflow-x-auto scroll-smooth whitespace-nowrap scrollbar-hidden"
+            >
               {[...[1, 2, 3], ...[1, 2, 3]].map((item, index) => (
                 <li
                   key={index < 3 ? item : `copy-${item}`}
@@ -145,22 +170,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-scroll {
-          animation: scroll 20s linear infinite;
-        }
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
       {/* Physical Section */}
       <div className="flex items-center justify-center">
         <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] mx-auto">
@@ -385,7 +394,7 @@ export default function HomePage() {
                 { name: "USA", flag: "/images/india.svg" },
                 { name: "UK", flag: "/images/india.svg" },
               ].map((country, index) => (
-                <li key={index} className="flex items-center gap-0 p-1">
+                <li key={index} className="flex items-center gap-0 p-1  ">
                   <img
                     src={country.flag}
                     alt={country.name}
