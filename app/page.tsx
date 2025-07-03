@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, InstagramIcon } from "lucide-react";
 import { useRef } from "react";
 
 const specialities = [
@@ -123,13 +123,13 @@ export default function HomePage() {
           <div className="overflow-hidden relative px-2">
             <button
               onClick={() => scroll("left")}
-              className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2 -ml-1"
+              className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2 -ml-1 hover:bg-gray-100 transition active:scale-95"
             >
               <ArrowLeft />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2 -mr-1"
+              className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-white shadow-md rounded-full p-2 -mr-1 hover:bg-gray-100 transition active:scale-95"
             >
               <ArrowRight />
             </button>
@@ -154,7 +154,9 @@ export default function HomePage() {
                     }`}
                   >
                     <span>
-                      <h1 className="text-sm font-">Nepals Healthcare</h1>
+                      <h1 className="text-[10px] text-center text">
+                        Nepals Healthcare
+                      </h1>
                     </span>
                   </div>
                 </li>
@@ -169,7 +171,6 @@ export default function HomePage() {
         <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] mx-auto">
           <div className="flex flex-col md:flex-row gap-8 lg:gap-12 xl:gap-16">
             {" "}
-            {/* Added responsive gap */}
             {/* Image Column */}
             <div className="w-full md:w-[50%] pt-[50px] md:pt-[120px] relative">
               <img
