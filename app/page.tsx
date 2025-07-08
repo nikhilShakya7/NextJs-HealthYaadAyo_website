@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 import axios from "axios";
 import { BASE_URL } from "@/constant";
+import Button from "./components/Button";
+import VirtualBookingSection from "./components/VirtualBookingSection";
 const specialities = [
   {
     title: "Pulmonology",
@@ -72,12 +74,14 @@ export default function HomePage() {
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
+    section: { title: string; desc: string; icon: number }[];
   }
 
   const scrollRef = useRef<HTMLUListElement>(null);
 
   const [homepageData, setHomepageData] = useState<HomepageData | null>(null);
   console.log({ BASE_URL });
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -237,7 +241,8 @@ export default function HomePage() {
               </h2>
 
               <ul className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 mt-4 sm:mt-6">
-                {[
+                {
+                  /*[
                   {
                     icon: 1,
                     title: "Physical Doctor Booking",
@@ -254,28 +259,29 @@ export default function HomePage() {
                     title: "Virtual Doctor Consultation",
                     desc: "Access specialized medical expertise from the comfort of your home, Connect with licensed doctors via video calls.",
                   },
-                ].map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 sm:gap-4 md:gap-5 lg:gap-6 list-none"
-                  >
-                    <div className="flex-shrink-0 pt-0 sm:pt-1">
-                      <img
-                        src={`/images/icons/icon${item.icon}.svg`}
-                        alt={`icon${item.icon}`}
-                        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-bold text-[#4C4C4C] font-['Raleway'] text-sm xs:text-base sm:text-lg md:text-xl leading-snug">
-                        {item.title}
-                      </p>
-                      <p className="text-[#767676] font-['Raleway'] text-xs xs:text-sm sm:text-base md:text-lg font-normal mt-1 leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </li>
-                ))}
+                ]*/ homepageData.section.map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start gap-3 sm:gap-4 md:gap-5 lg:gap-6 list-none"
+                    >
+                      <div className="flex-shrink-0 pt-0 sm:pt-1">
+                        <img
+                          src={`/images/icons/icon${item.icon}.svg`}
+                          alt={`icon${item.icon}`}
+                          className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
+                        />
+                      </div>
+                      <div>
+                        <p className="font-bold text-[#4C4C4C] font-['Raleway'] text-sm xs:text-base sm:text-lg md:text-xl leading-snug">
+                          {item.title}
+                        </p>
+                        <p className="text-[#767676] font-['Raleway'] text-xs xs:text-sm sm:text-base md:text-lg font-normal mt-1 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </li>
+                  ))
+                }
               </ul>
 
               <button className="relative z-0 mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] text-white font-medium text-xs xs:text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
@@ -286,42 +292,20 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center h-auto">
-        <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] h-auto mx-auto">
-          {/* Text Content*/}
-          <div className="w-full md:w-[50%] float-none md:float-left relative z-0 pt-[50px] md:pt-[120px]">
-            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.25rem] lg:text-[2.75rem] xl:text-[74px] leading-tight text-[#8037B6]">
-              Virtual
-            </h1>
-            <h2 className="font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[2.5rem] xl:text-[61px] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
-              Doctor Booking
-            </h2>
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 sm:mb-6 md:mb-8 leading-relaxed">
-              Welcome to our cutting-edge online platform designed to streamline
+      <VirtualBookingSection
+        title="Virtual"
+        subtitle="Doctor Consultation"
+        description1="Welcome to our cutting-edge online platform designed to streamline
               your healthcare experience! With our user-friendly interface,
-              booking a doctor's appointment has never been easier.
-            </p>
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-6 sm:mb-8 leading-relaxed">
-              Our platform features a simple and intuitive interface that caters
+              booking a doctor's appointment has never been easier."
+        description2="Our platform features a simple and intuitive interface that caters
               to users of all ages and technological backgrounds. Whether you're
               tech-savvy or new to online booking, you'll find the process
-              effortless.
-            </p>
-            <button className="relative z-0 mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] text-white font-medium text-xs xs:text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
-              Book A Demo Today
-            </button>
-          </div>
-
-          {/* Image */}
-          <div className="w-full md:w-[50%] float-none md:float-right pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
-            <img
-              src="/images/overlay3.svg"
-              className="w-full max-w-[500px] mx-auto md:max-w-none object-contain max-h-[500px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[550px]"
-              alt="Virtual Doctor Booking"
-            />
-          </div>
-        </div>
-      </div>
+              effortless."
+        buttonText="Schedule a Virtual Visit"
+        imageSrc="/images/overlay3.svg"
+        imageAlt="Virtual Doctor Consultation"
+      />
 
       {/* Medicine Delivery at Home */}
       <div className="flex items-center justify-center h-auto">
@@ -395,9 +379,7 @@ export default function HomePage() {
                   ))}
                 </ul>{" "}
               </div>
-              <button className="relative z-0 mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] text-white font-medium text-xs xs:text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
-                Book A Demo Today
-              </button>
+              <Button label={"Book a demo today"} />
             </div>
           </div>
         </div>
