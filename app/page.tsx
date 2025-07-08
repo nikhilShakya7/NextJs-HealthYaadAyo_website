@@ -7,6 +7,8 @@ import axios from "axios";
 import { BASE_URL } from "@/constant";
 import Button from "./components/Button";
 import VirtualBookingSection from "./components/VirtualBookingSection";
+import MedicineDelivery from "./components/MedicineSection";
+import InternationalDoctor from "./components/InternationalDoctorSection";
 const specialities = [
   {
     title: "Pulmonology",
@@ -307,137 +309,40 @@ export default function HomePage() {
         imageAlt="Virtual Doctor Consultation"
       />
 
-      {/* Medicine Delivery at Home */}
-      <div className="flex items-center justify-center h-auto">
-        <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] mx-auto">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16">
-            {" "}
-            {/* Added gap utilities here */}
-            <div className="w-full md:w-[50%] pt-[50px] md:pt-[120px] relative">
-              {" "}
-              {/* Removed float classes */}
-              <img
-                src="/images/overlay4.svg"
-                className="w-full max-w-[500px] mx-auto md:max-w-none object-contain"
-                alt="Medicine Delivery"
-              />
-            </div>
-            {/* Text Content */}
-            <div className="w-full md:w-[50%] pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
-              {" "}
-              {/* Removed float classes */}
-              <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[74px] leading-tight text-[#8037B6]">
-                Medicine
-              </h1>
-              <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[61px] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
-                Delivery At Home
-              </h2>
-              <p className="pt-4 sm:pt-6 md:pt-8 text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 sm:mb-6 md:mb-8 leading-relaxed">
-                Introducing our revolutionary online platform designed to
-                simplify the process of ordering and receiving your medications.
-                With just a few clicks, you can now have your prescriptions
-                delivered straight to your doorstep.
-              </p>
-              <p className="text-[#4C4C4C] font-['Raleway'] font-bold text-xs xs:text-sm sm:text-base tracking-wider uppercase">
-                Know Your Right Medicines
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-3 sm:gap-y-4 pt-2 sm:pt-3">
-                <ul className="space-y-3 sm:space-y-4">
-                  {[
-                    "Seamless Ordering",
-                    "Fast And Reliable Delivery",
-                    "Convenient Delivery Options",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3 sm:gap-4">
-                      <img
-                        src="/images/check.svg"
-                        alt="check"
-                        className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
-                      />
-                      <span className="text-gray-700 font-['Raleway'] text-sm sm:text-base md:text-lg leading-snug">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <ul className="space-y-4 sm:space-y-4">
-                  {[
-                    "Refill Reminders",
-                    "24/7 Customer Support",
-                    "Secure Payment Options",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3 sm:gap-4">
-                      <img
-                        src="/images/check.svg"
-                        alt="check"
-                        className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
-                      />
-                      <span className="text-gray-700 font-['Raleway'] text-sm sm:text-base md:text-lg leading-snug">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>{" "}
-              </div>
-              <Button label={"Book a demo today"} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <MedicineDelivery
+        title="Medicine"
+        subtitle="At Your Doorstep"
+        description="Get your medications delivered quickly and safely with our trusted delivery service. Never run out of essential medicines again."
+        featureLists={[
+          ["Same-day Delivery", "Temperature Control", "Verified Pharmacies"],
+          [
+            "Prescription Management",
+            "Dose Reminders",
+            "Insurance Integration",
+          ],
+        ]}
+        buttonText="Order Medicines Now"
+        imageSrc="/images/overlay4.svg"
+        imageAlt="Pharmacy Delivery"
+        sectionTitle="Why Choose Our Service"
+      />
 
-      {/* International Doctor Section */}
-      <div className="flex items-center justify-center">
-        <div className="w-full px-4 sm:px-6 md:w-[95%] lg:w-[90%] xl:w-[1200px] mx-auto">
-          {/* Image */}
-          <div className="w-full md:w-[50%] float-none md:float-right pt-[50px] md:pt-[120px] relative">
-            <img
-              src="/images/overlay5.svg"
-              className="w-full max-w-[500px] mx-auto md:max-w-none object-contain max-h-[500px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[600px]"
-              alt="Medicine Delivery"
-            />
-          </div>
-
-          {/* Text Content */}
-          <div className="w-full md:w-[50%] float-none md:float-left pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
-            <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] xl:text-[74px] leading-tight text-[#8037B6]">
-              Consultation
-            </h1>
-            <h2 className="-mb-4 sm:-mb-6 font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[2rem] lg:text-[2.5rem] xl:text-[61px] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
-              International Doctor
-            </h2>
-
-            <p className="pt-4 sm:pt-6 md:pt-8 text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 sm:mb-6 md:mb-8 leading-relaxed">
-              Welcome to our innovative platform connecting you with a world of
+      <InternationalDoctor
+        title="Global"
+        subtitle="Medical Experts"
+        description="  Welcome to our innovative platform connecting you with a world of
               healthcare expertise. With our online consultation service, you
-              can now access top-tier medical advice.
-            </p>
-
-            <ul className="grid grid-cols-0 sm:grid-cols-2 gap-x-0 gap-y-2">
-              {[
-                { name: "India", flag: "/images/india.svg" },
-                { name: "Nepal", flag: "/images/india.svg" },
-                { name: "USA", flag: "/images/india.svg" },
-                { name: "UK", flag: "/images/india.svg" },
-              ].map((country, index) => (
-                <li key={index} className="flex items-center gap-0 p-1  ">
-                  <img
-                    src={country.flag}
-                    alt={country.name}
-                    className="w-5 h-5 object-contain"
-                  />
-                  <h4 className="text-gray-800 font-['Raleway'] text-sm">
-                    {country.name}
-                  </h4>
-                </li>
-              ))}
-            </ul>
-
-            <button className="relative z-0 mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#7131A3] text-white font-medium text-xs xs:text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
-              Book A Demo Today
-            </button>
-          </div>
-        </div>
-      </div>
+              can now access top-tier medical advice."
+        countries={[
+          { name: "Germany", flag: "/images/india.svg" },
+          { name: "Japan", flag: "/images/india.svg" },
+          { name: "Canada", flag: "/images/india.svg" },
+          { name: "Australia", flag: "/images/india.svg" },
+        ]}
+        buttonText="Schedule Consultation"
+        imageSrc="/images/overlay5.svg"
+        imageAlt="Global Medical Experts"
+      />
 
       {/* Lab Report Section  */}
       <div className="flex items-center justify-center h-auto">
