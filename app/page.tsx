@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, InstagramIcon } from "lucide-react";
-import { useRef } from "react";
-
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 const specialities = [
   {
     title: "Pulmonology",
@@ -61,7 +61,48 @@ const countries = [
 ];
 
 export default function HomePage() {
+  interface HomepageData {
+    id: number;
+    documentId: string;
+    maintext: string;
+    physicalBookingSection: string;
+    maindescription: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+  }
+
   const scrollRef = useRef<HTMLUListElement>(null);
+
+  const [homepageData, setHomepageData] = useState<HomepageData | null>(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch("http://localhost:1337/api/home-pages");
+        const json = await res.json();
+        console.log("API response:", json);
+
+        if (json.data && json.data.length > 0) {
+          console.log("Setting homepageData:", json.data[0]);
+
+          setHomepageData(json.data[0]);
+        } else {
+          console.warn("No data found in response");
+
+          setHomepageData(null);
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+
+        setHomepageData(null);
+      }
+    }
+
+    fetchData();
+  }, []);
+  if (!homepageData) return <div>Loading...</div>;
+
   const scroll = (direction: string) => {
     if (!scrollRef.current) return;
     const scrollAmount = 300;
@@ -69,6 +110,7 @@ export default function HomePage() {
       left: direction === "left" ? -scrollAmount : scrollAmount,
     });
   };
+
   return (
     <>
       <div
@@ -83,15 +125,17 @@ export default function HomePage() {
         <div className="w-[1200px]">
           <div className="absolute z-0 w-[620px] h-[900px] float-left pt-[150px]">
             <h1 className=" text-2xl xs:text-3xl md:text-5xl lg:text-[3.5rem] xl:text-[84px] font-bold font-['Raleway'] text-[#7131A3] capitalize -mb-4 mt-6 leading-tight ">
-              Meet - Nepals
+              {/* Meet - Nepals*/}
+              {homepageData.maintext}{" "}
             </h1>
             <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] font-normal font-['Raleway'] text-[#34134F] capitalize mb-4 md:mb-6 leading-tight">
               Health Aggragtor
             </h2>
             <p className=" hidden md:block  text-sm xs:text-base sm:text-lg md:text-xl font-normal font-['Raleway'] text-black mb-4 md:mb-8 leading-relaxed">
-              Nepal's healthcare landscape has witnessed a remarkable
+              {/*Nepal's healthcare landscape has witnessed a remarkable
               transformation with the emergence of the country's foremost Health
-              Aggregator.
+              Aggregator.*/}
+              {homepageData.maindescription}
             </p>
             <button className="relative z-0 mt-4 sm:mt-6 px-6 py-3 rounded-full bg-[#7131A3] text-white font-medium text-sm sm:text-base hover:bg-purple-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#7131A3] focus:ring-opacity-50 active:bg-[#4a1d6a] shadow-sm hover:shadow-md cursor-pointer">
               Book A Demo Today
@@ -182,7 +226,8 @@ export default function HomePage() {
             {/* Text Column */}
             <div className="w-full md:w-[50%] pt-[30px] sm:pt-[50px] md:pt-[120px] relative">
               <h1 className="-mb-4 sm:-mb-6 font-['Raleway'] font-bold text-2xl xs:text-3xl sm:text-4xl md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] leading-tight text-[#8037B6]">
-                Physical
+                {/*Physical*/}
+                {homepageData.physicalBookingSection}
               </h1>
               <h2 className="font-['Raleway'] text-xl xs:text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[2.5rem] xl:text-[3rem] leading-tight text-black mt-1 sm:mt-2 md:mt-3">
                 Doctor Booking
