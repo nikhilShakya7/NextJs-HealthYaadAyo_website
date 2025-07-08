@@ -2,7 +2,9 @@
 
 import { ArrowLeft, ArrowRight, InstagramIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+
 import axios from "axios";
+import { BASE_URL } from "@/constant";
 const specialities = [
   {
     title: "Pulmonology",
@@ -75,11 +77,12 @@ export default function HomePage() {
   const scrollRef = useRef<HTMLUListElement>(null);
 
   const [homepageData, setHomepageData] = useState<HomepageData | null>(null);
-
+  console.log({ BASE_URL });
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("http://localhost:1337/api/home-pages");
+        const res = await fetch(`${BASE_URL}/api/home-pages?populate=*`);
+
         const json = await res.json();
         console.log("API response:", json);
 
@@ -117,7 +120,7 @@ export default function HomePage() {
         className="flex items-center justify-center overflow-auto bg-no-repeat bg-right z-0"
         style={{
           backgroundImage:
-            "url('/images/BG-CIRCLE.png'), url('/images/bg1.svg')",
+            "url('/images/BG-CIRCLE.png'), url('http://localhost:1337/uploads/bg1_87a3d7aca4.svg')",
           backgroundPosition: "right bottom, left top",
           backgroundRepeat: "no-repeat, no-repeat",
         }}
